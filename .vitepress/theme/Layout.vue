@@ -15,10 +15,6 @@
             >RSS<span class="hidden sm:inline"> Feed</span></a
           >
           <span class="mr-2 ml-2">·</span>
-          <a class="hover:text-gray-700" href="https://help.thorn.so"
-            >Help<span class="hidden sm:inline"> Center</span></a
-          >
-          <span class="mr-2 ml-2">·</span>
           <a
             class="hover:text-gray-700"
             href="https://thorn.so"
