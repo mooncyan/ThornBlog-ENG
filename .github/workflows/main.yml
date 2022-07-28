@@ -44,4 +44,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./.vitepress/dist
