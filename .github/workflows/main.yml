@@ -34,9 +34,9 @@ jobs:
           npm i -g pnpm
           pnpm i
 
-      - run: pnpm ci
-      - run: pnpm test
-      - run: pnpm run generate
+      - run: pnpm i ci
+      - run: pnpm i test
+      - run: vitepress build && node ./.vitepress/genFeed
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
