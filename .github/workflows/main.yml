@@ -21,17 +21,22 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+#       - name: Cache dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.npm
+#           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-node-
 
-      - run: pnpm ci
-      - run: pnpm test
-      - run: pnpm run generate
+      - name: Install Node.js dependencies
+        run: |
+          npm i -g pnpm
+          pnpm i
+
+      - run: pnpm i ci
+      - run: pnpm i test
+      - run: pnpm run build 
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
