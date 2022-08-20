@@ -9,7 +9,7 @@ email: 'alecyrus'
 THORN is a digital content productivity tool designed to help you sort through your mind fragments, write more comfortably, and share your creations with your readers more quickly.
 
 ---
-![Light Mode](https://s1.ax1x.com/2022/07/12/jc57l9.png)
+![Light Mode](https://s1.ax1x.com/2022/08/20/vsfZM4.png)
 
 
 We launched the beta test in November last year. Although many users have approbated our interaction design and writing experience, some also complained that the user experience was not good especially when the network environment was unstable. At that time, honstly our first reaction was that it didn't seem like a problem caused by THORN .
