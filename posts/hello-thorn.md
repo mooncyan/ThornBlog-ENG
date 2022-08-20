@@ -9,7 +9,7 @@ email: 'alecyrus'
 THORN is a digital content productivity tool designed to help you sort through your mind fragments, write more comfortably, and share your creations with your readers more quickly.
 
 ---
-![浅色模式](https://s1.ax1x.com/2022/07/12/jc57l9.png)
+![Light Mode](https://s1.ax1x.com/2022/07/12/jc57l9.png)
 
 
 We launched the beta test in November last year. Although many users have approbated our interaction design and writing experience, some also complained that the user experience was not good especially when the network environment was unstable. At that time, honstly our first reaction was that it didn't seem like a problem caused by THORN .
@@ -83,10 +83,11 @@ At this point, I think you already understand what CRDT means for offline-first 
 > We believe that CRDTs have the potential to be the foundation of a new generation of software. Just as packet switching is the enabling technology for the Internet and networking, or capacitive touchscreens are the enabling technology for smartphones, we think CRDTs could be the foundation of collaborative software that gives users full ownership of their data.
 
 ---
-# The data synchronization engine of THORN
+# The data synchronization mechanism of THORN
 Let's go back to the specific implementation. You can notice that for CRDT, a server is still needed to ensure that when the client connects to the network, the server can know the data changes of other clients at any time from the server. Of course, the client also needs to notify the server of data changes when it is offline.
 
-[![jcZQhT.png](https://s1.ax1x.com/2022/07/11/jcZQhT.png)](https://imgtu.com/i/jcZQhT)
+![](https://s1.ax1x.com/2022/08/20/vsRLjJ.png)
+
 The above figure is a schematic diagram of the logical structure of THORN's data synchronization mechanism. You can notice:
 1. All client devices of each user have a copy of the data stored in the local database;
 2. The THORN synchronization service also has a copy of the data stored in Alibaba Cloud OSS.
@@ -98,7 +99,7 @@ At the same time, when you actively delete a data object, the official synchroni
 On the other hand, when any client device connects to the THORN sync service, the client and the THORN sync service will transmit data updates to each other to complete the data synchronization. Then the THORN sync service will push other clients' data updates to the client. At the same time, data changes will also be transmitted to the synchronization service at any time.
 
 So there is a **star schema** between the sync service and the client device:
-![](https://s1.ax1x.com/2022/07/12/jcTySe.png)
+![](https://s1.ax1x.com/2022/08/20/vsWw2F.png)
 As shown in the figure, the synchronization between clients 1, 3, 4, and the THORN synchronization service ensures that their respective data copies are in the same state.
 
 When client 3 reconnects to the network, it can also achieve the final consistency of the status of all data copies through data synchronization with the THORN synchronization service.
@@ -157,7 +158,7 @@ The cloud-based architecture solution of the THORN beta version is completely ab
 On the basis of *Offline first*, we have created a new THORN application.
 
 ## THORN Architecture
-![](https://s1.ax1x.com/2022/07/12/jc710I.png)
+![](https://s1.ax1x.com/2022/08/20/vsWzrj.png)
 The above picture shows the planned functions of the official version of THORN. For the specific function introduction, please visit the [official website](https://thorn.red) to view.
 
 At present, some features are not totally completed, and the unfinished features will be launched in the following updates.
@@ -254,6 +255,5 @@ Paragraph nodes integrate Blockquote nodes and Callout nodes, and are rendered i
 This is just the beginning, there are many more surprising features and optimizations on the way...
 
 # Last but not the least
-On August 1, 2022, THORN will be officially launched globally. We look forward to seeing you!
-
+THORN will be officially launched globally soon. We look forward to seeing you!
 > The THORN Early Access version has been opened for download!
