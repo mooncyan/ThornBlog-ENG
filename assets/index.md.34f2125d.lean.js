@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app.fad97fbe.js";const r='{"title":"","description":"","frontmatter":{"subtext":"There is something about THORN we want to share with you."},"headers":[],"relativePath":"index.md","lastUpdated":1658979472563}';var s=t({},[["render",function(t,r,s,o,i,d){return a(),e("div")}]]);export{r as __pageData,s as default};
